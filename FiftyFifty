@@ -1,0 +1,59 @@
+import java.util.Random();
+
+public class FiftyFifty {
+    private char firstAnswer;
+    private char secondAnswer;
+    int randomAnswer1;
+    int randomAnswer2;
+    
+    Random rand = new Random();
+    
+    public void useFiftyFifty() {
+        do {
+            //choose two random answers to remove
+            randomAnswer1 = rand.nextInt(4); 
+            randomAnswer2 = rand.nextInt(4);
+            //convert them into char
+            switch (randomAnswer1) {
+                case 0: 
+                    firstAnswer = 'A';
+                    break;
+                case 1: 
+                    firstAnswer = 'B';
+                    break;
+                case 2: 
+                    firstAnswer = 'C';
+                    break;
+                case 3: 
+                    firstAnswer = 'D';
+                    break;
+                    
+            switch (randomAnswer2) {
+                case 0: 
+                    secondAnswer = 'A';
+                    break;
+                case 1: 
+                    secondAnswer = 'B';
+                    break;
+                case 2: 
+                    secondAnswer = 'C';
+                    break;
+                case 3: 
+                    secondAnswer = 'D';
+                    break;
+            }  
+        }
+            //checking if firstAnswer or secondAnswer are correct answers or equal each other
+            while (firstAnswer == correctAnswerList[roundNumber]) || (secondAnswer == correctAnswerList[roundNumber]) || (firstAnswer == secondAnswer);
+            getTwoAnswers(randomAnswer1, randomAnswer2); 
+    }
+    
+    //remove two answers from answerList
+    public void getTwoAnswers(int a1, int a2) {
+        answerList.remove(a1);
+        answerList.remove(a2);
+        
+        //print answerList after program removed to wrong answers
+        System.out.print(answerList);
+    }
+}
